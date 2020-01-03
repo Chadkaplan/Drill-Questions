@@ -31,3 +31,33 @@ const nextInLine = (arr, addition) => {
 }
 
 nextInLine([5,6,7,8,9],1)
+
+
+//   =======================================================================================
+
+// Fibonacci numbers are created in the following way:
+
+// F(0) = 0
+// F(1) = 1
+// ...
+// F(n) = F(n-2) + F(n-1)
+
+// Write a function that calculates the nth Fibonacci number.
+
+// My solution
+function fib(n) {
+    // Handle the first two numbers not having two previous numbers to add
+	if(n==0){
+		return 0;
+	}
+	else if(n==1){
+		return 1;
+    }
+    // Calculating typical Fibonacci numbers
+	else{
+		return fib(n-1)+fib(n-2);
+	}
+}
+
+// A nifty es6 solution that I did not come up with using a ternary operator in an arrow function
+const fib = num => (num < 2 ? num : fib(num - 1) + fib(num - 2));
